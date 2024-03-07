@@ -2,38 +2,30 @@ import React, { useState } from 'react';
 import beautify from 'js-beautify';
 
 function Beautifier() {
-  const [inputCode, setInputCode] = useState('');
-  const [beautifiedCode, setBeautifiedCode] = useState('');
+  const [code, setCode] = useState('');
 
   const beautifyCode = () => {
     try {
-      const beautified = beautify(inputCode);
-      setBeautifiedCode(beautified);
+      const beautified = beautify(code);
+      setCode(beautified);
     } catch (error) {
       console.error('Error beautifying code:', error);
-      setBeautifiedCode('Error beautifying code');
+      setCode('Error beautifying code');
     }
   };
 
   return (
     <div>
       <textarea
-        value={inputCode}
-        onChange={(e) => setInputCode(e.target.value)}
+        value={code}
+        onChange={(e) => setCode(e.target.value)}
         rows={10}
-        cols={80}
+        cols={40}
         placeholder="Enter your JS code or JSON here..."
+        style={{ width: '100%' }}
       />
       <br />
       <button onClick={beautifyCode}>Beautify</button>
-      <br />
-      <textarea
-        value={beautifiedCode}
-        readOnly
-        rows={10}
-        cols={80}
-        placeholder="Beautified code will appear here..."
-      />
     </div>
   );
 }
