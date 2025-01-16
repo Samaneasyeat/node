@@ -6,6 +6,5 @@ console.log("x is ", x);
 }
 getName();
 console.log("saman");
-
 console.log("x is ", x);
 
