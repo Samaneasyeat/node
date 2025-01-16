@@ -1,10 +1,11 @@
 //what is hoisting give a example 
-console.log("the value of x before initialization of x", x);
 getName();
-var x = 5;
-console.log("the value of x after initialization of x", x);
-function getName() {
+console.log("x is ", x);
+ var getName=()=> {
     console.log("get name")
 }
 getName();
+console.log("saman");
+
+console.log("x is ", x);
 
